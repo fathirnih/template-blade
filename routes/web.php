@@ -6,6 +6,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//http method 
+
 Route::get('/hello', function () {
     return 'welcome';
 });
