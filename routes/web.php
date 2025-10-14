@@ -1,43 +1,25 @@
 <?php
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AuthController;
+
+// 🔹 Route utama (halaman publik)
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-//http method 
+// 🔹 Contoh HTTP Method (latihan)
+Route::get('/hello', fn() => 'welcome');
+Route::post('/submit', fn() => 'Hello');
+Route::put('/update', fn() => 'data berhasil diupdate');
+Route::delete('/delete', fn() => 'data berhasil dihapus');
 
-Route::get('/hello', function () {
-    return 'welcome';
-});
+// 🔹 Login dan Logout
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-
-Route::post('/submit', function (){
-    return 'Hello';
-});
-
-Route::put('/update', function(){
-    return 'data berhasil di update';
-});
-
-Route::delete('/delete', function(){
-    return 'data berhasil di update';
-});
-
-//grub prefix
-
-
-// 🔹 ROUTE GROUP PREFIX
-Route::prefix('blog')->group(function () {
-    Route::get('/', [BlogController::class, 'index'])->name('blog.index');
-    Route::get('/create', [BlogController::class, 'create'])->name('blog.create');
-    Route::post('/', [BlogController::class, 'store'])->name('blog.store');
-    Route::get('/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
-    Route::put('/{id}', [BlogController::class, 'update'])->name('blog.update');
-    Route::delete('/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
-});
-
-//auth 
+// 🔹 Admin area (hanya bisa diakses kalau sudah login sebagai admin)
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard', function () {
@@ -47,9 +29,15 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/blogs', [BlogController::class, 'index'])->name('admin.blogs');
 });
 
+Route::middleware(['admin'])->prefix('admin')->group(function () {
 
-use App\Http\Controllers\AuthController;
+    // Dashboard Admin
+    Route::get('/dashboard', [BlogController::class, 'index'])->name('admin.dashboard');
 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    // CRUD Blog
+    Route::get('/create', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('/', [BlogController::class, 'store'])->name('blog.store');
+    Route::get('/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::put('/{id}', [BlogController::class, 'update'])->name('blog.update');
+    Route::delete('/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+});

@@ -19,7 +19,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->role === 'admin') {
-                return redirect()->route('dashboard');
+                return redirect()->route('admin.dashboard');
             } else {
                 Auth::logout();
                 return back()->withErrors(['email' => 'Hanya admin yang bisa login.']);
