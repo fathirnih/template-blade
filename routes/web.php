@@ -1,8 +1,9 @@
 <?php
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [BlogController::class, 'index'])->name('home');
+Route::get('/', [Controller::class, 'index'])->name('home');
 
 //http method 
 
