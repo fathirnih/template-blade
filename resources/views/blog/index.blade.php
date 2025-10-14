@@ -35,26 +35,22 @@
         <!-- Article Section -->
         <section id="article" class="latest-articles">
             <h2>Artikel Terbaru</h2>
-            <div id="articles-container" class="articles-container">
+            <div class="articles-container">
+    @foreach ($blogs as $blog)
+        <div class="article">
+            <img src="{{ asset('images/' . $blog->image) }}" alt="{{ $blog->title }}">
+            <h3>{{ $blog->title }}</h3>
+            <p class="author">{{ $blog->author }} | {{ $blog->date }}</p>
+            <p>{{ Str::limit($blog->content, 100) }}</p>
 
-                @foreach($blogs as $blog)
-                <div class="article-card">
-                    <h3>{{ $blog->title }}</h3>
-                    <p>{{ Str::limit($blog->content, 120) }}</p>
+            <!-- Tambahkan konten penuh disembunyikan -->
+            <p class="full-content" style="display:none;">{{ $blog->content }}</p>
 
-                    <div class="btn-group">
-                        <a href="{{ route('blog.edit', $blog->id) }}" class="btn-edit">Edit</a>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+    @endforeach
+</div>
 
-                        <form action="{{ route('blog.destroy', $blog->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn-delete">Hapus</button>
-                        </form>
-                    </div>
-                </div>
-                @endforeach
-
-            </div>
         </section>
 
         <!-- About Us Section -->
