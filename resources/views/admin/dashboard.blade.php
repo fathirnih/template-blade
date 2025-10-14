@@ -1,3 +1,5 @@
+<!-- resources/views/admin/dashboard.blade.php -->
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -93,6 +95,7 @@
                     <th>Judul</th>
                     <th>Author</th>
                     <th>Tanggal</th>
+                    <th>Content</th>
                     <th>Gambar</th>
                     <th>Aksi</th>
                 </tr>
@@ -104,6 +107,7 @@
                         <td>{{ $blog->title }}</td>
                         <td>{{ $blog->author }}</td>
                         <td>{{ $blog->date }}</td>
+                        <td>{{ Str::limit($blog->content, 50) }}</td> <!-- Batasi 50 karakter -->
                         <td>
                             <img src="{{ asset('images/' . $blog->image) }}" alt="{{ $blog->title }}" width="80">
                         </td>
