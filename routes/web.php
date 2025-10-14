@@ -35,3 +35,9 @@ Route::prefix('blog')->group(function () {
     Route::put('/{id}', [BlogController::class, 'update'])->name('blog.update');
     Route::delete('/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
 });
+
+//auth 
+
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware('auth')->name('dashboard');
