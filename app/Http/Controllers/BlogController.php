@@ -22,7 +22,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         Blog::create($request->all());
-        return redirect()->route('blog.index')->with('success', 'Blog berhasil ditambahkan');
+        return redirect()->route('admin.dashboard')->with('success', 'Blog berhasil ditambahkan');
     }
  
     public function edit(string $id)
@@ -36,7 +36,7 @@ class BlogController extends Controller
     {
           $blog = Blog::findOrFail($id);
         $blog->update($request->all());
-        return redirect()->route('blog.index')->with('success', 'Blog berhasil diperbarui');
+        return redirect()->route('admin.dashboard')->with('success', 'Blog berhasil diperbarui');
     }
 
 
@@ -44,7 +44,7 @@ class BlogController extends Controller
     {
            $blog = Blog::findOrFail($id);
         $blog->delete();
-        return redirect()->route('blog.index')->with('success', 'Blog berhasil dihapus');
+        return redirect()->route('admin.dashboard')->with('success', 'Blog berhasil dihapus');
     }
     
 }
