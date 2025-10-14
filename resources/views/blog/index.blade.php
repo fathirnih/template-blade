@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page - My Website</title>
-    <script src="{{ asset('blog/script.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('blog/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
