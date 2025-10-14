@@ -25,7 +25,6 @@ Route::delete('/delete', function(){
 
 //grub prefix
 
-use App\Http\Controllers\BlogController;
 
 // 🔹 ROUTE GROUP PREFIX
 Route::prefix('blog')->group(function () {
