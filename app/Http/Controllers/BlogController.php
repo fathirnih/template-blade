@@ -20,10 +20,35 @@ class BlogController extends Controller
     }
 
     public function store(Request $request)
-    {
-        Blog::create($request->all());
-        return redirect()->route('admin.dashboard')->with('success', 'Blog berhasil ditambahkan');
+{
+    $request->validate([
+        'title' => 'required',
+        'author' => 'required',
+        'date' => 'required|date',
+        'content' => 'required',
+        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+    ]);
+
+    if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $filename = time().'_'.$file->getClientOriginalName();
+        // simpan di public/images
+        $file->move(public_path('images'), $filename);
+    } else {
+        $filename = null;
     }
+
+    Blog::create([
+        'title' => $request->title,
+        'author' => $request->author,
+        'date' => $request->date,
+        'content' => $request->content,
+        'image' => $filename, // simpan nama file saja
+    ]);
+
+    return redirect()->route('admin.dashboard')->with('success', 'Artikel berhasil ditambahkan!');
+}
+
  
     public function edit(string $id)
     {
