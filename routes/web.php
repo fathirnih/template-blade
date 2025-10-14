@@ -38,9 +38,14 @@ Route::prefix('blog')->group(function () {
 
 //auth 
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware('auth')->name('dashboard');
+Route::middleware(['admin'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::get('/admin/blogs', [BlogController::class, 'index'])->name('admin.blogs');
+});
+
 
 use App\Http\Controllers\AuthController;
 
