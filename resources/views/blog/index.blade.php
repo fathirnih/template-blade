@@ -25,12 +25,13 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Home Section -->
-        <section id="home" class="hero">
-            <h1>Selamat Datang di Website Kami</h1>
-            <p>Temukan berbagai artikel menarik dan informasi bermanfaat di sini.</p>
-            <a href="{{ route('blog.create') }}" class="cta-btn">Tambah Artikel</a>
-        </section>
+       <!-- Home Section -->
+<section id="home" class="hero">
+    <h1>Selamat Datang di Website Kami</h1>
+    <p>Temukan berbagai artikel menarik dan informasi bermanfaat di sini.</p>
+    <a href="{{ route('blog.index') }}" class="cta-btn">Jelajahi Sekarang</a>
+</section>
+
 
         <!-- Article Section -->
         <section id="article" class="latest-articles">
