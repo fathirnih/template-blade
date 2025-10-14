@@ -53,6 +53,17 @@
 
         </section>
 
+        <div id="article-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modal-image" src="" alt="Article Image">
+    <h3 id="modal-title"></h3>
+    <p id="modal-author"></p>
+    <p id="modal-content"></p>
+  </div>
+</div>
+
+
         <!-- About Us Section -->
         <section id="about-us" class="about-section">
             <h2>Tentang Kami</h2>
