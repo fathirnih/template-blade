@@ -36,5 +36,12 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
 
     Route::resource('blog', BlogController::class)->except(['show']);
 
+    //jika menggunakan prefix 
+    // CRUD Blog
+ //   Route::get('/create', [BlogController::class, 'create'])->name('blog.create');
+   // Route::post('/', [BlogController::class, 'store'])->name('blog.store');
+   // Route::get('/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+   // Route::put('/{id}', [BlogController::class, 'update'])->name('blog.update');
+   // Route::delete('/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
   
 });
