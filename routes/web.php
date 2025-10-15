@@ -34,10 +34,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     // Dashboard Admin
     Route::get('/dashboard', [BlogController::class, 'index'])->name('admin.dashboard');
 
-    // CRUD Blog
-    Route::get('/create', [BlogController::class, 'create'])->name('blog.create');
-    Route::post('/', [BlogController::class, 'store'])->name('blog.store');
-    Route::get('/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
-    Route::put('/{id}', [BlogController::class, 'update'])->name('blog.update');
-    Route::delete('/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+    Route::resource('blog', BlogController::class)->except(['show']);
+
+  
 });
