@@ -76,6 +76,23 @@
 
     <div class="top-bar">
         <h1>Dashboard Admin</h1>
+        @if(session('success'))
+    <div id="flash-message" class="alert alert-success" style="margin-bottom: 20px; padding: 10px; background-color: #d4edda; color: #155724; border-radius: 5px;">
+        {{ session('success') }}
+    </div>
+
+    <script>
+        // Menghilangkan flash message setelah 5 detik
+        setTimeout(function() {
+            const flash = document.getElementById('flash-message');
+            if(flash){
+                flash.style.transition = 'opacity 0.5s ease';
+                flash.style.opacity = '0';
+                setTimeout(() => flash.remove(), 500); // hapus element setelah fade out
+            }
+        }, 5000); // 5000ms = 5 detik
+    </script>
+@endif
         <div>
             <form method="POST" action="{{ route('logout') }}" style="display:inline;">
                 @csrf
