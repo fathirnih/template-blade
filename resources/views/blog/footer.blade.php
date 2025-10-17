@@ -1,3 +1,74 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  .footer-full {
+    background: #0d0d0d;
+    color: #ccc;
+    padding: 60px 40px 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-logo h2 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .footer-logo p {
+    color: #999;
+    line-height: 1.6;
+  }
+  .footer-links h3,
+  .footer-social h3,
+  .footer-contact h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    border-left: 4px solid #00bcd4;
+    padding-left: 10px;
+  }
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-links li {
+    margin: 8px 0;
+  }
+  .footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .footer-links a:hover {
+    color: #00bcd4;
+    margin-left: 5px;
+  }
+  .footer-contact p {
+    margin: 8px 0;
+  }
+  .footer-social a {
+    color: #bbb;
+    font-size: 20px;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .footer-social a:hover {
+    color: #00bcd4;
+  }
+  .footer-bottom {
+    border-top: 1px solid #222;
+    text-align: center;
+    padding-top: 15px;
+    color: #777;
+    font-size: 14px;
+  }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <footer class="footer-full">
   <div class="footer-container">
     <div class="footer-logo">
