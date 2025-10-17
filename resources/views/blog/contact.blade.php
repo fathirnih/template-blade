@@ -1,4 +1,4 @@
-@extends('blog.layout.master')
+@extends('blog.layouts.master')
 
 @section('title', 'Hubungi Kami')
 
