@@ -9,7 +9,7 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/article', [HomeController::class, 'article'])->name('article');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
-
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 // 🔹 Contoh HTTP Method (latihan)
 Route::get('/hello', fn() => 'welcome');
 Route::post('/submit', fn() => 'Hello');

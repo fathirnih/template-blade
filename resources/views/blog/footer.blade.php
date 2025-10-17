@@ -85,6 +85,7 @@
         <li><a href="{{ route('home') }}">🏠 Home</a></li>
         <li><a href="{{ route('article') }}">📰 Artikel</a></li>
         <li><a href="{{ route('about') }}">👥 Tentang Kami</a></li>
+        <li><a href="{{ route('contact') }}">Contact</a></li>
       </ul>
     </div>
 
