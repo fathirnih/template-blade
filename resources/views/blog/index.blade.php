@@ -1,6 +1,6 @@
 @extends('blog.layouts.master')
 
-@section('title', 'Home - My Website')
+@section('title', 'My Website')
 
 @section('content')
 <section id="home" class="hero">
