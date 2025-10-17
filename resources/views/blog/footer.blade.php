@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- Footer -->
 <style>
   * {
     box-sizing: border-box;
@@ -78,7 +69,6 @@
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <footer class="footer-full">
   <div class="footer-container">
     <div class="footer-logo">
@@ -92,9 +82,10 @@
     <div class="footer-links">
       <h3>Navigasi</h3>
       <ul>
-        <li><a href="#home">🏠 Home</a></li>
-        <li><a href="#article">📰 Artikel</a></li>
-        <li><a href="#about-us">👥 Tentang Kami</a></li>
+        <li><a href="{{ route('home') }}">🏠 Home</a></li>
+        <li><a href="{{ route('article') }}">📰 Artikel</a></li>
+        <li><a href="{{ route('about') }}">👥 Tentang Kami</a></li>
+        <li><a href="{{ route('contact') }}">Contact</a></li>
       </ul>
     </div>
 
@@ -119,7 +110,3 @@
     © 2025 King Dev | All Rights Reserved
   </div>
 </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
