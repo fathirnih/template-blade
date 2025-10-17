@@ -82,9 +82,9 @@
     <div class="footer-links">
       <h3>Navigasi</h3>
       <ul>
-        <li><a href="#home">🏠 Home</a></li>
-        <li><a href="#article">📰 Artikel</a></li>
-        <li><a href="#about-us">👥 Tentang Kami</a></li>
+        <li><a href="{{ route('home') }}">🏠 Home</a></li>
+        <li><a href="{{ route('article') }}">📰 Artikel</a></li>
+        <li><a href="{{ route('about') }}">👥 Tentang Kami</a></li>
       </ul>
     </div>
 

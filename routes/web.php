@@ -7,6 +7,8 @@ use App\Http\Controllers\AuthController;
 
 // 🔹 Route utama (halaman publik)
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/article', [HomeController::class, 'article'])->name('article');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 // 🔹 Contoh HTTP Method (latihan)
 Route::get('/hello', fn() => 'welcome');

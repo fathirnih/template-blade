@@ -2,9 +2,9 @@
     <div class="logo">MyWebsite</div>
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#article">Article</a></li>
-            <li><a href="#about-us">About Us</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('article') }}">Article</a></li>
+            <li><a href="{{ route('about') }}">About Us</a></li>
         </ul>
     </nav>
     <button id="dark-mode-toggle">🌙</button>

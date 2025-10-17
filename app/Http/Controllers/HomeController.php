@@ -6,9 +6,19 @@ use App\Models\Blog;
 
 class HomeController extends Controller
 {
-    public function index()
+     public function index()
+    {
+        return view('blog.index');
+    }
+
+    public function article()
     {
         $blogs = Blog::all();
-        return view('blog.index', compact('blogs'));
+        return view('blog.article', compact('blogs'));
+    }
+
+    public function about()
+    {
+        return view('blog.about');
     }
 }
